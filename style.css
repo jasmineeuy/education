@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    background-color: blanchedalmond;
+  }
+  header ul {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    background-color: rgb(192, 232, 100);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    background-color: rgb(75, 212, 178);
+  }
+}
