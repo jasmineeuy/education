@@ -43,40 +43,12 @@ const getQuestions = async (request, response, next) => {
   }
 };
 
-const getLogin = async (request, response, next) => {
-  try {
-    await response.status(200).json({
-      success: { message: "This is the login page" },
-      statusCode: 200,
-    });
-  } catch (error) {
-    response.status(400).json({
-      error: { message: "Cannot get login page" },
-      statusCode: 400,
-    });
-  }
-};
-
-const getSignUp = async (request, response, next) => {
+const getSearch = async (request, response, next) => {
   try {
     await response.status(400).json({
-      success: { message: "This is the signup page" },
-      statusCode: 200,
+      success: { message: "This is the search page" },
     });
-  } catch (error) {
-    response.status(400).json({
-      error: { message: "Cannot get the sign up page" },
-      statusCode: 400,
-    });
-  }
+  } catch (error) {}
 };
 
-const getSearch =async(request,response,next)=>{
-  try{
-    await response.status(400).json({
-      success:{message:"This is the search page"}
-    })
-  }catch(error){}
-}
-
-module.exports = { getHome, getAbout, getQuestions,getLogin, getSignUp };
+module.exports = { getHome, getAbout, getQuestions };

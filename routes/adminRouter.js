@@ -4,7 +4,7 @@ const express = require("express");
 const {
   editCenter,
   deleteCenter,
-  getAdmin,
+  getCenter,
   createCenter,
 } = require("../controllers/adminController");
 //import router
@@ -20,10 +20,17 @@ Read - Get
 Update - Put
 Delete - Delete
 */
+const checkAuthentication = (request, response, next) => {
+  if (request.isAuthenticated()) {
+    return next();
+  } else {
+    response.redirect(403, "/unauthenticated");
+  }
+};
 
 //routes start with /admin route
-router.get("/", getAdmin);
-//router.get("/create", createCenter);
+router.get("/", checkAuthentication, getCenter);
+router.get("/create", createCenter);
 //get approved centers
 // /update/:id - put - update information for a specific tutoring
 router.put("/update/:id", editCenter);

@@ -46,6 +46,9 @@ app.use("/api/admin", adminRoute);
 app.use("/api/centers", centersRoute);
 app.use("/api/auth", authRoute);
 
+// auth should have login , logout , signup only
+// once logged in admin has access to create, delete update
+
 // app.get("/", (request, response, next) => {
 //   response
 //     .status(200)

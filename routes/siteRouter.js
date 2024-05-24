@@ -5,8 +5,8 @@ const {
   getHome,
   getAbout,
   getQuestions,
-  getLogin,
-  getSignUp,
+  // getLogin,
+  // getSignUp,
 } = require("../controllers/siteController");
 //import router
 const router = express.Router();
@@ -28,8 +28,8 @@ router.get("/about", getAbout);
 // questions -get
 router.get("/questions", getQuestions);
 
-router.get("/login", getLogin);
-router.get("/signUp", getSignUp);
+// router.get("/login", getLogin);
+// router.get("/signUp", getSignUp);
 
 //export routes
 module.exports = router;

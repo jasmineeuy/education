@@ -2,7 +2,7 @@
 const Center = require("../model/centerModel");
 //contains handler functions for adminRouter
 
-const getAdmin = async (request, response, next) => {
+const getCenter = async (request, response, next) => {
   try {
     await Center.find({}).then((centers) => {
       response.status(200).json({
@@ -18,9 +18,9 @@ const getAdmin = async (request, response, next) => {
     });
   }
 };
-// const createCenter = async (request, response, next) => {
-//   response.status(302).redirect("api/centers/add-facility");
-// };
+const createCenter = async (request, response, next) => {
+  response.status(302).redirect("api/centers/add-facility");
+};
 
 const editCenter = async (request, response, next) => {
   const { id } = request.params;
@@ -70,8 +70,8 @@ const deleteCenter = async (request, response, next) => {
   }
 };
 module.exports = {
-  
   editCenter,
   deleteCenter,
-  getAdmin,
+  getCenter,
+  createCenter,
 };
