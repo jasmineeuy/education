@@ -29,6 +29,7 @@ const signupRequest = (request, response, next) => {
   const { firstName, lastName, email, phoneNumber, username, password } =
     request.body;
   bcrypt.hash(password, 10, async (error, hashedPassword) => {
+    console.log("hashedPassword", hashedPassword);
     if (error) {
       return next(error);
     }
