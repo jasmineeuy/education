@@ -18,7 +18,7 @@ const centersRoute = require("./routes/centersRouter");
 const authRoute = require("./routes/authRouter");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.use(helmet());
 app.use(morgan("combined"));
@@ -48,12 +48,6 @@ app.use("/api/auth", authRoute);
 
 // auth should have login , logout , signup only
 // once logged in admin has access to create, delete update
-
-// app.get("/", (request, response, next) => {
-//   response
-//     .status(200)
-//     .json({ success: { message: "Home page is successful" }, statusCode: 200 });
-// });
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

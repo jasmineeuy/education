@@ -18,6 +18,7 @@ const getCenter = async (request, response, next) => {
     });
   }
 };
+
 const createCenter = async (request, response, next) => {
   response.status(302).redirect("api/centers/add-facility");
 };
@@ -69,6 +70,7 @@ const deleteCenter = async (request, response, next) => {
     });
   }
 };
+
 module.exports = {
   editCenter,
   deleteCenter,
