@@ -17,6 +17,7 @@ const userSchema = new Schema({
   },
   password: { type: String, required: [true, "A password is required"] },
   googleId: { type: String },
+  role: ["user"],
 });
 
 //export model for use

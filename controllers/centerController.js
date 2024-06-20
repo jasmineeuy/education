@@ -1,4 +1,3 @@
-//import model
 const Center = require("../model/centerModel");
 //get all facility info
 
@@ -69,3 +68,6 @@ const getCenterById = async (request, response, next) => {
 };
 //export handler functions
 module.exports = { getCenters, createFacility, getCenterById };
+
+
+//update getCentebyZipCode

@@ -28,6 +28,7 @@ const centerSchema = new Schema({
   },
   approved: {
     type: Boolean,
+    default:false
   },
 });
 

@@ -26,7 +26,7 @@ const logoutRequest = (request, response, next) => {
 };
 
 const signupRequest = (request, response, next) => {
-  const { firstName, lastName, email, phoneNumber, username, password } =
+  const { firstName, lastName, email, phoneNumber, username, password,role } =
     request.body;
   bcrypt.hash(password, 10, async (error, hashedPassword) => {
     console.log("hashedPassword", hashedPassword);
@@ -41,6 +41,7 @@ const signupRequest = (request, response, next) => {
       username,
       password: hashedPassword,
       googleId: "",
+      roles:["user"]
     });
     try {
       await newUser.save();
